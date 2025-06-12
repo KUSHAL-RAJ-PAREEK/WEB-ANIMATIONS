@@ -1,39 +1,34 @@
-// gsap.to(".box1",{
-//     x:1500,
-//     rotate:360,
-//     duration:1.5,
-//     delay:1
-// })
+var main = document.querySelector(".main")
+
+var cursor = document.querySelector(".cursor")
+
+var imageDiv = document.querySelector(".image");
 
 
-// gsap.to(".box2",{
-//     x:1500,
-//     backgroundColor:"yellow",
-//     duration:1.5,
-//     delay:2.5
-// })
-
-// gsap.to("box3",{
-//     x:1500,
-//     scale:0.5,
-//     duration:1,
-//     delay:4
-// })
-
-
-
-var tl = gsap.timeline()
-
-tl.to(".box1",{
-    x:1500,
-    rotate:360,
-    duration:1.5,
-    delay:1
+main.addEventListener('mousemove',(dets)=>{
+    gsap.to(cursor,{
+        x:dets.x,
+        y:dets.y,
+        duration:1,
+        ease:"back.out"
+    })
 })
 
 
-tl.to(".box2",{
-    x:1500,
-    duration:1.5,
+imageDiv.addEventListener('mouseenter',()=>{
+    cursor.innerHTML = "view more"
+    cursor.style.backgroundColor = " hsla(0, 0%, 100%, 0.447)"
+    gsap.to(cursor,{
+        scale:4
+    })
+})
 
+
+imageDiv.addEventListener('mouseleave',()=>{
+        cursor.innerHTML = ""
+            cursor.style.backgroundColor = "#fff"
+
+    gsap.to(cursor,{
+        scale: 1
+    })
 })
