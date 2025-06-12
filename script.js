@@ -1,33 +1,51 @@
-
-var menu  = document.querySelector(".nav i")
-var cross = document.querySelector(".full i")
-
-var tl = gsap.timeline()
-
- tl.to(".full",{
-    right:0,
-    duration:0.6
- })
+function BreakText(){
+    var h1 = document.querySelector("h1");
+var h1Text = h1.textContent;
 
 
- tl.from(".full h4",{
-    x:150,
-    duration: 0.7,
-    stagger:0.28,
-    opacity:0
- })
+var splittedText = h1Text.split("");
+
+var clutter = ""
+var hv =Math.floor(splittedText.length/2);
+
+splittedText.forEach((e,idx)=> {
+
+if(idx > hv){
+  clutter += `<span class ="a">${e}</span>`;
+}else{
+  clutter += `<span class ="b">${e}</span>`;
+
+}
+});
 
 
- tl.from(".full i",{
-    opacity:0
- })
+h1.innerHTML = clutter;
+}
 
- tl.pause()
 
-menu.addEventListener('click',()=>{
-    tl.play()
+BreakText()
+
+
+
+
+gsap.from("h1 .a",{
+    y:50,
+    duration:0.6,
+    delay:0.5,
+opacity:0,
+stagger:0.15
 })
 
-cross.addEventListener('click',()=>{
-    tl.reverse()
+
+
+gsap.from("h1 .b",{
+    y:50,
+    duration:0.6,
+    delay:0.5,
+opacity:0,
+stagger:-0.15
 })
+
+
+
+
