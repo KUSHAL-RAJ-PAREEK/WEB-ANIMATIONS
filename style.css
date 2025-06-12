@@ -13,49 +13,65 @@ html,body{
 
 
 .main{
-    height:100%;
-    width: 100%;
-    background-color: #111;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.cursor{
-    height: 20px;
-    width: 20px;
-    background-color: #ffffff45;
-    border-radius: 50%;
-    position: fixed;
-    font-size: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 9;
-     color: #111;
-}
-
-
-.image{
-    height: 30vw;
-    width: 70vw;
-    background-color: red;
-   
-}
-
-.image img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    background-image: url(_user-uploads_Yuiwoo8.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.overlay{
-position: absolute;
-height: 100%;
-width: 100%;
-background-color: transparent;
-z-index: 10;
+body{
+    overflow-x: hidden;
+}
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding: 40px 50px;
+}
+
+.nav h2{
+    font-size: 30px;
+}
+
+.nav i{
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+.full{
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    top:0;
+    right: -40%;
+    background-color: #ffffff73;
+    backdrop-filter: blur(10px);
+    padding: 40px 60px;
+  
+}
+
+.full h4{
+      color: #111;
+   font-size: 50px;
+   font-weight: 500;
+   margin-bottom: 10px; 
+}
+
+
+.full i{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
+    font-weight: 600;
+    font-size: 20px;
+color: #111;
 }
