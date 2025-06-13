@@ -1,51 +1,24 @@
-function BreakText(){
-    var h1 = document.querySelector("h1");
-var h1Text = h1.textContent;
-
-
-var splittedText = h1Text.split("");
-
-var clutter = ""
-var hv =Math.floor(splittedText.length/2);
-
-splittedText.forEach((e,idx)=> {
-
-if(idx > hv){
-  clutter += `<span class ="a">${e}</span>`;
-}else{
-  clutter += `<span class ="b">${e}</span>`;
-
-}
-});
-
-
-h1.innerHTML = clutter;
-}
-
-
-BreakText()
-
-
-
-
-gsap.from("h1 .a",{
-    y:50,
-    duration:0.6,
-    delay:0.5,
-opacity:0,
-stagger:0.15
+window.addEventListener("wheel",(dets) =>{
+  if(dets.deltaY >0){
+    gsap.to(".marque",{
+    transform: 'translateX(-200%)',
+    duration:4,
+    repeat:-1,
+    ease:"none"
 })
 
-
-
-gsap.from("h1 .b",{
-    y:50,
-    duration:0.6,
-    delay:0.5,
-opacity:0,
-stagger:-0.15
+gsap.to(".marque img",{
+    rotate:180
 })
-
-
-
-
+  }else{
+ gsap.to(".marque",{
+    transform: 'translateX(0)',
+    duration:4,
+    repeat:-1,
+    ease:"none"
+})
+gsap.to(".marque img",{
+    rotate:0
+})
+  }  
+})
