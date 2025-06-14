@@ -13,8 +13,6 @@ const App = () => {
    <OrbitControls/>
    <ambientLight/>
 <Cyl/>
-
-
 <EffectComposer>
  <Bloom
  mipmapBlur
@@ -23,7 +21,6 @@ const App = () => {
     luminanceSmoothing={0} // smoothness of the luminance threshold. Range is [0, 1]
 />
 </EffectComposer>
-
    </Canvas>
    <div className='w-full bg-black text-cyan-200 py-32'>
     Welcome to channel
