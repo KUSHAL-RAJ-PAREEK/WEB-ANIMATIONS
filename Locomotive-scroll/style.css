@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+
+#page1{
+    height: 100vh;
+    width: 100%;
+        background-color: crimson;
+
+}
+
+#page2{
+    height: 100vh;
+    width: 100%;
+        background-color: rgb(253, 17, 17);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+#page3{
+    height: 100vh;
+    width: 100%;
+        background-color: rgb(255, 42, 42);
+
+}
+
+
+#page2 img{
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
